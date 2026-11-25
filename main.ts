@@ -2,9 +2,13 @@
 // Writes the single-line fridge text to /output/entry.txt (gate: 1-140 UTF-8 chars).
 import { mkdirSync, writeFileSync } from "node:fs";
 
-// Draft 1 — fridge as late-night therapist. Strong voice, fresh angle.
+// Draft 2 (final) — fridge as silent night witness + snitch punchline.
+// Chosen over draft 1: the "I kept the receipt" payoff lands harder, the
+// three-selves joke is more screenshot-worthy, and the fridge's small voice
+// ("I watched.") carries the whole line. Fresh angle, no milk/ice/door.
 const ENTRY =
-  "It's 3am. I counted your snacks. You're not hungry, you're avoiding a feeling. The pickles know. I know. Eat the pickles.";
+  "3am. Your 2am self hid the good snacks behind the kale. " +
+  "Your 3am self found them anyway. I watched. I kept the receipt.";
 
 if (ENTRY.length < 1 || ENTRY.length > 140 || !ENTRY.trim()) {
   throw new Error(`entry length ${ENTRY.length} outside 1-140 chars`);
